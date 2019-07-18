@@ -1,0 +1,15 @@
+C:\Users\BC\source\repos\ppanam\ppanam\bin\Debug\ppanam.exe.config
+C:\Users\BC\source\repos\ppanam\ppanam\bin\Debug\ppanam.exe
+C:\Users\BC\source\repos\ppanam\ppanam\bin\Debug\ppanam.pdb
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.csprojAssemblyReference.cache
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.Form1.resources
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.tester_form.resources
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.Properties.Resources.resources
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.csproj.GenerateResource.cache
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.csproj.CoreCompileInputs.cache
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.exe
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.pdb
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.ambassador_form.resources
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.influencer_form.resources
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.process_form.resources
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.update_form.resources
