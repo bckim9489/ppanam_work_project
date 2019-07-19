@@ -13,3 +13,7 @@ C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.ambassador_form.resource
 C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.influencer_form.resources
 C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.process_form.resources
 C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.update_form.resources
+C:\Users\BC\source\repos\ppanam\ppanam\bin\Debug\MySql.Data.dll
+C:\Users\BC\source\repos\ppanam\ppanam\bin\Debug\Google.Protobuf.dll
+C:\Users\BC\source\repos\ppanam\ppanam\bin\Debug\MySql.Data.xml
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.csproj.CopyComplete
