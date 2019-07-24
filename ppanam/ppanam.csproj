@@ -63,6 +63,12 @@
     <Compile Include="ambassador_form.Designer.cs">
       <DependentUpon>ambassador_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="np_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="np_form.Designer.cs">
+      <DependentUpon>np_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="update_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="np_form.resx">
+      <DependentUpon>np_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="update_form.resx">
       <DependentUpon>update_form.cs</DependentUpon>

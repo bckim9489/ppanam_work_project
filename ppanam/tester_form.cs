@@ -48,7 +48,7 @@ namespace ppanam
             Ambassador,
             Influencer
         }
-        private void Start_Connect_DB()
+        public void Start_Connect_DB()
         {
             string sql_ = "SELECT company_name, product_name FROM project_tbl";
             string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
@@ -67,7 +67,7 @@ namespace ppanam
             //}
             
         }
-        
+
         private void Clear_btn_Click(object sender, EventArgs e)
         {
             init_set();
@@ -78,8 +78,15 @@ namespace ppanam
 
         }
 
+        
+
         private void Write_btn_Click(object sender, EventArgs e)
         {
+            
+            DataGridViewRow ck_dg = pjt_grid.SelectedRows[0];
+            string old_pd_name = ck_dg.Cells[1].Value.ToString();
+            string old_cp_name = ck_dg.Cells[0].Value.ToString();
+
             //client info
             string pd_name = product_name_box.Text;
             string cp_name = company_name_box.Text;
@@ -96,7 +103,7 @@ namespace ppanam
             //client req
             string req_ = req_box.Text;
 
-            string sql_ = "SELECT count(*) FROM project_tbl WHERE product_name ='"+pd_name+"' and company_name = '"+cp_name+"'";
+            string sql_ = "SELECT pid FROM project_tbl WHERE product_name ='"+old_pd_name+"' and company_name = '"+old_cp_name+"'";
 
             string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
@@ -108,9 +115,7 @@ namespace ppanam
             
             if (result >0)
             {
-                DataGridViewRow ck_dg = pjt_grid.SelectedRows[0];
-                string old_pd_name = ck_dg.Cells[1].ToString();
-                string old_cp_name = ck_dg.Cells[0].ToString();
+                
                 string sql = "UPDATE project_tbl SET product_name ='" + pd_name +
                     "', company_name ='" + cp_name +
                     "', quantity =" + quantity +
@@ -122,31 +127,17 @@ namespace ppanam
                     ", Ambassador =" + ambass_ +
                     ", Influencer =" + influe_ +
                     ", requirement ='" + req_ + 
-                    "' WHERE product_name ='" + old_pd_name + 
-                    "' and company_name = '" + old_cp_name + "'";
+                    "' WHERE pid ="+result;
                 MySqlCommand cmd2 = new MySqlCommand(sql, conn);
-                object result_up = cmd2.ExecuteNonQuery();
-
+                cmd2.ExecuteNonQuery();
             }
-            else
-            {
-                string sql = "INSERT INTO project_tbl values('" + pd_name + 
-                    "', '" + cp_name + 
-                    "', " + quantity + 
-                    ", " + period + 
-                    ", " + insta_ + 
-                    ", " + youtu_ + 
-                    ", " + blog_ + 
-                    ", " + tester_ + 
-                    ", " + ambass_ + 
-                    ", " + influe_ + 
-                    ", '" + req_ + 
-                    "', 10)";
-                MySqlCommand cmd2 = new MySqlCommand(sql, conn);
-                object result_up = cmd2.ExecuteNonQuery();
-                
-            }
+            
             conn.Close();
+            Start_Connect_DB();
+            repair_btn.Visible = true;
+            write_btn.Visible = false;
+            clear_btn.Visible = false;
+            read_only_set();
 
         }
 
@@ -187,6 +178,78 @@ namespace ppanam
                 req_box.Text = rdr["requirement"].ToString();
             }
             conn.Close();
+        }
+
+        private void Delete_btn_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow ck_dg = pjt_grid.SelectedRows[0];
+            string target_pd_name = ck_dg.Cells[1].Value.ToString();
+            string target_cp_name = ck_dg.Cells[0].Value.ToString();
+            string sql_ = "DELETE FROM project_tbl where  product_name ='" + target_pd_name + "' and company_name = '" + target_cp_name + "'";
+
+            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            MySqlConnection conn = new MySqlConnection(strConn);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = sql_;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            Start_Connect_DB();
+        }
+
+        private void Repair_btn_Click(object sender, EventArgs e)
+        {
+            repair_btn.Visible = false;
+            write_btn.Visible = true;
+            clear_btn.Visible = true;
+            mod_set();
+        }
+
+        private void Tester_form_Load(object sender, EventArgs e)
+        {
+            clear_btn.Visible = false;
+            read_only_set();
+        }
+        private void read_only_set()
+        {
+            product_name_box.ReadOnly = true;
+            company_name_box.ReadOnly = true;
+            quantity_box.ReadOnly = true;
+            period_box.ReadOnly = true;
+            //media
+            instagram_ck_box.Enabled = false;
+            youtube_ck_box.Enabled = false;
+            blog_ck_box.Enabled = false;
+            //type
+            tester_ck_box.Enabled = false;
+            ambassador_ck_box.Enabled = false;
+            influencer_ck_box.Enabled = false;
+            //client req
+            req_box.ReadOnly = true;
+        }
+        private void mod_set()
+        {
+            product_name_box.ReadOnly = false;
+            company_name_box.ReadOnly = false;
+            quantity_box.ReadOnly = false;
+            period_box.ReadOnly = false;
+            //media
+            instagram_ck_box.Enabled = true;
+            youtube_ck_box.Enabled = true;
+            blog_ck_box.Enabled = true;
+            //type
+            tester_ck_box.Enabled = true;
+            ambassador_ck_box.Enabled = true;
+            influencer_ck_box.Enabled = true;
+            //client req
+            req_box.ReadOnly = false;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            np_form ne_ = new np_form(this);
+            ne_.ShowDialog();
         }
     }
 }

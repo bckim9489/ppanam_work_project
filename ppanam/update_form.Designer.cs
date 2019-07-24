@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Test Projects");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.show_btn = new System.Windows.Forms.Button();
             this.load_btn = new System.Windows.Forms.Button();
@@ -103,13 +102,14 @@
             this.load_btn.Name = "load_btn";
             this.load_btn.Size = new System.Drawing.Size(98, 30);
             this.load_btn.TabIndex = 2;
-            this.load_btn.Text = "Load";
+            this.load_btn.Text = "Reload";
             this.load_btn.UseVisualStyleBackColor = true;
+            this.load_btn.Click += new System.EventHandler(this.Load_btn_Click);
             // 
             // project_list
             // 
-            this.project_list.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            this.project_list.FullRowSelect = true;
+            this.project_list.GridLines = true;
             this.project_list.Location = new System.Drawing.Point(5, 19);
             this.project_list.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.project_list.MultiSelect = false;
@@ -117,8 +117,9 @@
             this.project_list.Size = new System.Drawing.Size(244, 365);
             this.project_list.TabIndex = 1;
             this.project_list.UseCompatibleStateImageBehavior = false;
-            this.project_list.View = System.Windows.Forms.View.List;
-            this.project_list.Click += new System.EventHandler(this.Project_list_Click);
+            this.project_list.View = System.Windows.Forms.View.Details;
+            this.project_list.ItemActivate += new System.EventHandler(this.Project_list_Click);
+            this.project_list.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.Project_list_ItemSelectionChanged);
             // 
             // groupBox2
             // 
@@ -521,6 +522,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "update_form";
             this.Text = "Update";
+            this.Load += new System.EventHandler(this.Update_form_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

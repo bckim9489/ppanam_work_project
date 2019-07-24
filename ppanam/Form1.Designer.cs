@@ -33,12 +33,13 @@
             this.processWriteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectLoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.teskUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.appToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ppanamDataSet1 = new ppanam.ppanamDataSet();
-            this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.teskUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ppanamDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -47,9 +48,10 @@
             // 
             this.mainToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.processWriteToolStripMenuItem,
-            this.projectLoadToolStripMenuItem});
+            this.projectLoadToolStripMenuItem,
+            this.modelToolStripMenuItem});
             this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
-            this.mainToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.mainToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.mainToolStripMenuItem.Text = "Main";
             // 
             // processWriteToolStripMenuItem
@@ -57,13 +59,13 @@
             this.processWriteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.testerToolStripMenuItem});
             this.processWriteToolStripMenuItem.Name = "processWriteToolStripMenuItem";
-            this.processWriteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.processWriteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.processWriteToolStripMenuItem.Text = "Project";
             // 
             // testerToolStripMenuItem
             // 
             this.testerToolStripMenuItem.Name = "testerToolStripMenuItem";
-            this.testerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.testerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.testerToolStripMenuItem.Text = "Registrate";
             this.testerToolStripMenuItem.Click += new System.EventHandler(this.TesterToolStripMenuItem_Click);
             // 
@@ -73,13 +75,27 @@
             this.statusToolStripMenuItem,
             this.teskUpToolStripMenuItem});
             this.projectLoadToolStripMenuItem.Name = "projectLoadToolStripMenuItem";
-            this.projectLoadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.projectLoadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.projectLoadToolStripMenuItem.Text = "Process";
+            // 
+            // statusToolStripMenuItem
+            // 
+            this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
+            this.statusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statusToolStripMenuItem.Text = "Show Status";
+            this.statusToolStripMenuItem.Click += new System.EventHandler(this.StatusToolStripMenuItem_Click);
+            // 
+            // teskUpToolStripMenuItem
+            // 
+            this.teskUpToolStripMenuItem.Name = "teskUpToolStripMenuItem";
+            this.teskUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.teskUpToolStripMenuItem.Text = "Update";
+            this.teskUpToolStripMenuItem.Click += new System.EventHandler(this.TeskUpToolStripMenuItem_Click);
             // 
             // appToolStripMenuItem
             // 
             this.appToolStripMenuItem.Name = "appToolStripMenuItem";
-            this.appToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.appToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.appToolStripMenuItem.Text = "Schedule";
             this.appToolStripMenuItem.Click += new System.EventHandler(this.AppToolStripMenuItem_Click);
             // 
@@ -92,14 +108,15 @@
             this.configToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(982, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(859, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // configToolStripMenuItem
             // 
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
-            this.configToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.configToolStripMenuItem.Text = "Config";
             // 
             // ppanamDataSet1
@@ -107,33 +124,27 @@
             this.ppanamDataSet1.DataSetName = "ppanamDataSet";
             this.ppanamDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // statusToolStripMenuItem
+            // modelToolStripMenuItem
             // 
-            this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
-            this.statusToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.statusToolStripMenuItem.Text = "Show Status";
-            this.statusToolStripMenuItem.Click += new System.EventHandler(this.StatusToolStripMenuItem_Click);
-            // 
-            // teskUpToolStripMenuItem
-            // 
-            this.teskUpToolStripMenuItem.Name = "teskUpToolStripMenuItem";
-            this.teskUpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.teskUpToolStripMenuItem.Text = "Update";
-            this.teskUpToolStripMenuItem.Click += new System.EventHandler(this.TeskUpToolStripMenuItem_Click);
+            this.modelToolStripMenuItem.Name = "modelToolStripMenuItem";
+            this.modelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modelToolStripMenuItem.Text = "Model";
+            this.modelToolStripMenuItem.Click += new System.EventHandler(this.ModelToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(982, 653);
+            this.ClientSize = new System.Drawing.Size(859, 522);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -157,6 +168,7 @@
         private ppanamDataSet ppanamDataSet1;
         private System.Windows.Forms.ToolStripMenuItem statusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem teskUpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modelToolStripMenuItem;
     }
 }
 

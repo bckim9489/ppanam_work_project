@@ -55,6 +55,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.delete_btn = new System.Windows.Forms.Button();
             this.reset_btn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.repair_btn = new System.Windows.Forms.Button();
             this.Client_group.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.Media_group.SuspendLayout();
@@ -99,6 +101,7 @@
             // 
             // Client_group
             // 
+            this.Client_group.Controls.Add(this.repair_btn);
             this.Client_group.Controls.Add(this.groupBox3);
             this.Client_group.Controls.Add(this.clear_btn);
             this.Client_group.Controls.Add(this.write_btn);
@@ -189,6 +192,7 @@
             this.write_btn.TabIndex = 10;
             this.write_btn.Text = "Write";
             this.write_btn.UseVisualStyleBackColor = true;
+            this.write_btn.Visible = false;
             this.write_btn.Click += new System.EventHandler(this.Write_btn_Click);
             // 
             // label8
@@ -311,6 +315,7 @@
             // 
             // pjt_grid
             // 
+            this.pjt_grid.AllowUserToAddRows = false;
             this.pjt_grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.pjt_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pjt_grid.Location = new System.Drawing.Point(5, 19);
@@ -322,7 +327,7 @@
             this.pjt_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pjt_grid.Size = new System.Drawing.Size(496, 348);
             this.pjt_grid.TabIndex = 11;
-            this.pjt_grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Pjt_grid_CellContentClick);
+            this.pjt_grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Pjt_grid_CellContentClick);
             // 
             // groupBox1
             // 
@@ -347,6 +352,7 @@
             this.delete_btn.TabIndex = 12;
             this.delete_btn.Text = "Delete";
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.Delete_btn_Click);
             // 
             // reset_btn
             // 
@@ -359,12 +365,33 @@
             this.reset_btn.UseVisualStyleBackColor = true;
             this.reset_btn.Click += new System.EventHandler(this.Reset_btn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(731, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 31);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "New Project";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // repair_btn
+            // 
+            this.repair_btn.Location = new System.Drawing.Point(176, 373);
+            this.repair_btn.Name = "repair_btn";
+            this.repair_btn.Size = new System.Drawing.Size(109, 32);
+            this.repair_btn.TabIndex = 23;
+            this.repair_btn.Text = "Repair";
+            this.repair_btn.UseVisualStyleBackColor = true;
+            this.repair_btn.Click += new System.EventHandler(this.Repair_btn_Click);
+            // 
             // tester_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(858, 496);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Client_group);
@@ -373,6 +400,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "tester_form";
             this.Text = "tester_form";
+            this.Load += new System.EventHandler(this.Tester_form_Load);
             this.Client_group.ResumeLayout(false);
             this.Client_group.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -415,5 +443,7 @@
         private System.Windows.Forms.CheckBox ambassador_ck_box;
         private System.Windows.Forms.CheckBox tester_ck_box;
         private System.Windows.Forms.TextBox period_box;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button repair_btn;
     }
 }

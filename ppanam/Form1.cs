@@ -52,6 +52,23 @@ namespace ppanam
         {
             foreach (Form form in Application.OpenForms)//창 열려 있는지 확인쓰
             {
+                if (form.GetType() == typeof(update_form))
+                {
+                    form.Activate();
+                    form.BringToFront();
+                    return;
+                }
+            }
+            update_form update_ = new update_form();
+            update_.MdiParent = this;
+            update_.Dock = DockStyle.Fill;
+            update_.Show();
+        }
+
+        private void TeskUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)//창 열려 있는지 확인쓰
+            {
                 if (form.GetType() == typeof(process_form))
                 {
                     form.Activate();
@@ -65,21 +82,22 @@ namespace ppanam
             proc_.Show();
         }
 
-        private void TeskUpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ModelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms)//창 열려 있는지 확인쓰
             {
-                if (form.GetType() == typeof(update_form))
+                if (form.GetType() == typeof(influencer_form))
                 {
                     form.Activate();
                     form.BringToFront();
                     return;
                 }
             }
-            update_form update_ = new update_form();
-            update_.MdiParent = this;
-            update_.Dock = DockStyle.Fill;
-            update_.Show();
+
+            influencer_form proc_ = new influencer_form();
+            proc_.MdiParent = this;
+            proc_.Dock = DockStyle.Fill;
+            proc_.Show();
         }
     }
 }
