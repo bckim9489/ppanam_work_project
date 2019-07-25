@@ -66,6 +66,8 @@
             this.plog_view = new System.Windows.Forms.ListView();
             this.tester_tblTableAdapter1 = new ppanam.ppanamDataSetTableAdapters.tester_tblTableAdapter();
             this.up_btn = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.person_id_lb = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -158,6 +160,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.person_id_lb);
+            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.p_box);
             this.groupBox2.Controls.Add(this.black_ch_box);
             this.groupBox2.Controls.Add(this.pictureBox1);
@@ -199,6 +203,7 @@
             this.p_box.Name = "p_box";
             this.p_box.Size = new System.Drawing.Size(378, 25);
             this.p_box.TabIndex = 16;
+            this.p_box.Text = " ";
             // 
             // black_ch_box
             // 
@@ -454,6 +459,24 @@
             this.up_btn.Visible = false;
             this.up_btn.Click += new System.EventHandler(this.Up_btn_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 276);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(30, 15);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "ID :";
+            // 
+            // person_id_lb
+            // 
+            this.person_id_lb.AutoSize = true;
+            this.person_id_lb.Location = new System.Drawing.Point(42, 276);
+            this.person_id_lb.Name = "person_id_lb";
+            this.person_id_lb.Size = new System.Drawing.Size(15, 15);
+            this.person_id_lb.TabIndex = 17;
+            this.person_id_lb.Text = "0";
+            // 
             // influencer_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -518,5 +541,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ListView plog_view;
         private System.Windows.Forms.Button up_btn;
+        private System.Windows.Forms.Label person_id_lb;
+        private System.Windows.Forms.Label label13;
     }
 }

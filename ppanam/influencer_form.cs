@@ -70,6 +70,8 @@ namespace ppanam
 
                 while (rdr.Read())
                 {
+                    string per_id = rdr["person_id"].ToString();
+                    person_id_lb.Text = per_id;
                     name_box.Text = rdr["p_name"].ToString();
                     Insta_box.Text = rdr["instagram"].ToString();
                     you_box.Text = rdr["youtube"].ToString();
@@ -82,6 +84,7 @@ namespace ppanam
                     ans_box.Text = rdr["answer"].ToString();
                     black_ch_box.Checked = Convert.ToBoolean(rdr["blacklist"]);
                     string sql = "SELECT company_name FROM project_tbl WHERE pid = " + rdr["project_id"].ToString();
+                    img_load(per_id);
                     MySqlConnection conn2 = new MySqlConnection(strConn);
                     MySqlCommand cmd_ = new MySqlCommand();
                     cmd_.Connection = conn2;
@@ -144,7 +147,7 @@ namespace ppanam
             }
 
         }
-        private void img_load(int person_id)
+        private void img_load(string person_id)
         {
             string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
@@ -237,6 +240,8 @@ namespace ppanam
 
         private void Up_btn_Click(object sender, EventArgs e)
         {
+            string person_id = person_id_lb.Text;
+            
             Readonly_Mode();
         }
     }
