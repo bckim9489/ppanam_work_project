@@ -53,19 +53,14 @@ namespace ppanam
             string sql_ = "SELECT company_name, product_name FROM project_tbl";
             string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
-            
-            //try
-            //{
-                
-                conn.Open();
-                //MySqlCommand cmd = new MySqlCommand(sql_, conn);
-                MySqlDataAdapter adp = new MySqlDataAdapter(sql_, conn);
-                DataSet ds = new DataSet();
-                adp.Fill(ds);
-                pjt_grid.DataSource = ds.Tables[0];
-                conn.Close();
-            //}
-            
+
+            conn.Open();
+            //MySqlCommand cmd = new MySqlCommand(sql_, conn);
+            MySqlDataAdapter adp = new MySqlDataAdapter(sql_, conn);
+            DataSet ds = new DataSet();
+            adp.Fill(ds);
+            pjt_grid.DataSource = ds.Tables[0];
+            conn.Close();
         }
 
         private void Clear_btn_Click(object sender, EventArgs e)

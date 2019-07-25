@@ -111,6 +111,7 @@ namespace ppanam
             emali_box.ReadOnly = true;
             status_box.Enabled = false;
             ans_box.Enabled = false;
+            black_ch_box.Enabled = false;
             pic_uplo_btn.Visible = false;
             up_btn.Visible = false;
             mod_btn.Visible = true;
@@ -129,6 +130,7 @@ namespace ppanam
             emali_box.ReadOnly = false;
             status_box.Enabled = true;
             ans_box.Enabled = true;
+            black_ch_box.Enabled = true;
             pic_uplo_btn.Visible = true;
             up_btn.Visible = true;
             mod_btn.Visible = false;
@@ -153,7 +155,7 @@ namespace ppanam
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
 
-            string qury = "SELECT img FROM influencer_tbl, WHERE  person_id = " + person_id;
+            string qury = "SELECT img,person_id FROM influencer_tbl WHERE  person_id = " + person_id;
             MySqlDataReader rdr;
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
@@ -170,7 +172,8 @@ namespace ppanam
                     result2 = 1;
                 }
             }
-
+            conn.Close();
+            conn.Open();
             if ((result != 0) && (result2 != 0))
             {
                 qury = "select img from influencer_tbl where person_id = " + person_id;
@@ -186,6 +189,7 @@ namespace ppanam
                     pictureBox1.Image = new Bitmap(new MemoryStream(bImage));
                 }
             }
+            conn.Close();
         }
 
         private void img_upload(string person_id)
@@ -213,10 +217,10 @@ namespace ppanam
                 if (result != 0)
                 {
                     //qury = "UPDATE IMAGE SET IMAGE = :IMAGE WHERE IMAGENO = 2";
-                    qury = "UPDATE influencer_tbl SET img = :img WHERE person_id = " + person_id;
+                    qury = "UPDATE influencer_tbl SET img = @img WHERE person_id = " + person_id;
                     cmd.CommandText = qury;
-                    MySqlParameter param = cmd.Parameters.Add("img", MySqlDbType.Blob);
-                    param.Value = bImage;
+                    cmd.Parameters.AddWithValue("@img", bImage);
+                    
                     cmd.ExecuteNonQuery();
                     fs.Close();
                 } 
@@ -240,9 +244,47 @@ namespace ppanam
 
         private void Up_btn_Click(object sender, EventArgs e)
         {
+            string name = name_box.Text;
+            string insta = Insta_box.Text;
+            string you = you_box.Text;
+            string blo = blog_box.Text;
+            string follo = foll_box.Text;
+            string subs = subs_box.Text;
+            string emai = emali_box.Text;
+            string orien = orient_box.Text;
+            string stat = status_box.Text;
+            string ans = ans_box.Text;
+            string proj = p_box.Text;
             string person_id = person_id_lb.Text;
-            
+            bool bl_ck = Convert.ToBoolean(black_ch_box.Checked);
+
+            img_upload(person_id);
+
+            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            MySqlConnection conn = new MySqlConnection(strConn);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+
+            string sql = "UPDATE influencer_tbl SET p_name ='" + name +
+                    "', instagram ='" + insta +
+                    "', youtube ='" + you +
+                    "', blog ='" + blo +
+                    "', email = '" + emai +
+                    "', follower =" + follo +
+                    ", subscriber =" + subs +
+                    ", orientation ='" + orien +
+                    "', status ='" + stat +
+                    "', answer ='" + ans +
+                    "', blacklist =" + Convert.ToInt32(bl_ck) +
+                    " WHERE person_id =" + person_id;
+            cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
             Readonly_Mode();
+            init_list();
         }
     }
 }
