@@ -39,6 +39,20 @@ namespace ppanam
                 lvt.SubItems.Add(rdr["p_name"].ToString());
                 influ_list.Items.Add(lvt);
             }
+
+            person_id_lb.Text = "";
+            name_box.Text = "";
+            Insta_box.Text = "";
+            you_box.Text = "";
+            blog_box.Text = "";
+            foll_box.Text = "";
+            subs_box.Text = "";
+            orient_box.Text = "";
+            emali_box.Text = "";
+            status_box.Text = "";
+            ans_box.Text = "";
+            black_ch_box.Checked = false;
+
             conn.Close();
         }
         private void Influencer_form_Load(object sender, EventArgs e)
@@ -311,6 +325,24 @@ namespace ppanam
             {
                 MessageBox.Show("An unmodified name exists. Delete or modify.");
             }
+            
+            conn.Close();
+            init_list();
+        }
+
+        private void Del_btn_Click(object sender, EventArgs e)
+        {
+            string pers_id = person_id_lb.Text;
+            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            MySqlConnection conn = new MySqlConnection(strConn);
+            conn.Open();
+            
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            string sql_s = "DELETE FROM influencer_tbl where person_id = "+pers_id;
+
+            cmd.CommandText = sql_s;
+            cmd.ExecuteNonQuery();
             
             conn.Close();
             init_list();

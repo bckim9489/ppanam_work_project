@@ -68,6 +68,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.plog_view = new System.Windows.Forms.ListView();
             this.tester_tblTableAdapter1 = new ppanam.ppanamDataSetTableAdapters.tester_tblTableAdapter();
+            this.del_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -111,10 +112,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.del_btn);
             this.groupBox1.Controls.Add(this.up_btn);
             this.groupBox1.Controls.Add(this.create_btn);
             this.groupBox1.Controls.Add(this.mod_btn);
-            this.groupBox1.Controls.Add(this.reset_btn);
             this.groupBox1.Controls.Add(this.influ_list);
             this.groupBox1.Location = new System.Drawing.Point(12, 65);
             this.groupBox1.Name = "groupBox1";
@@ -156,9 +157,9 @@
             // 
             // reset_btn
             // 
-            this.reset_btn.Location = new System.Drawing.Point(6, 349);
+            this.reset_btn.Location = new System.Drawing.Point(777, 12);
             this.reset_btn.Name = "reset_btn";
-            this.reset_btn.Size = new System.Drawing.Size(63, 44);
+            this.reset_btn.Size = new System.Drawing.Size(63, 21);
             this.reset_btn.TabIndex = 3;
             this.reset_btn.Text = "Reset";
             this.reset_btn.UseVisualStyleBackColor = true;
@@ -222,14 +223,14 @@
             // 
             this.p_box.Location = new System.Drawing.Point(254, 213);
             this.p_box.Name = "p_box";
-            this.p_box.Size = new System.Drawing.Size(331, 21);
+            this.p_box.Size = new System.Drawing.Size(179, 21);
             this.p_box.TabIndex = 16;
             this.p_box.Text = " ";
             // 
             // black_ch_box
             // 
             this.black_ch_box.AutoSize = true;
-            this.black_ch_box.Location = new System.Drawing.Point(496, 20);
+            this.black_ch_box.Location = new System.Drawing.Point(510, 102);
             this.black_ch_box.Name = "black_ch_box";
             this.black_ch_box.Size = new System.Drawing.Size(75, 16);
             this.black_ch_box.TabIndex = 15;
@@ -258,7 +259,7 @@
             // ans_box
             // 
             this.ans_box.FormattingEnabled = true;
-            this.ans_box.Location = new System.Drawing.Point(496, 187);
+            this.ans_box.Location = new System.Drawing.Point(496, 18);
             this.ans_box.Name = "ans_box";
             this.ans_box.Size = new System.Drawing.Size(89, 20);
             this.ans_box.TabIndex = 12;
@@ -279,13 +280,13 @@
             // 
             this.orient_box.Location = new System.Drawing.Point(254, 154);
             this.orient_box.Name = "orient_box";
-            this.orient_box.Size = new System.Drawing.Size(249, 21);
+            this.orient_box.Size = new System.Drawing.Size(236, 21);
             this.orient_box.TabIndex = 7;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(416, 190);
+            this.label11.Location = new System.Drawing.Point(416, 21);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 12);
             this.label11.TabIndex = 10;
@@ -295,14 +296,14 @@
             // 
             this.emali_box.Location = new System.Drawing.Point(254, 127);
             this.emali_box.Name = "emali_box";
-            this.emali_box.Size = new System.Drawing.Size(249, 21);
+            this.emali_box.Size = new System.Drawing.Size(236, 21);
             this.emali_box.TabIndex = 5;
             // 
             // blog_box
             // 
             this.blog_box.Location = new System.Drawing.Point(254, 100);
             this.blog_box.Name = "blog_box";
-            this.blog_box.Size = new System.Drawing.Size(249, 21);
+            this.blog_box.Size = new System.Drawing.Size(236, 21);
             this.blog_box.TabIndex = 6;
             // 
             // label12
@@ -452,6 +453,16 @@
             // 
             this.tester_tblTableAdapter1.ClearBeforeFill = true;
             // 
+            // del_btn
+            // 
+            this.del_btn.Location = new System.Drawing.Point(6, 349);
+            this.del_btn.Name = "del_btn";
+            this.del_btn.Size = new System.Drawing.Size(63, 44);
+            this.del_btn.TabIndex = 16;
+            this.del_btn.Text = "Delete";
+            this.del_btn.UseVisualStyleBackColor = true;
+            this.del_btn.Click += new System.EventHandler(this.Del_btn_Click);
+            // 
             // influencer_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -460,6 +471,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.reset_btn);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -518,5 +530,6 @@
         private System.Windows.Forms.Button up_btn;
         private System.Windows.Forms.Label person_id_lb;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button del_btn;
     }
 }
