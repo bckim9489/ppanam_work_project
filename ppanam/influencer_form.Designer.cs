@@ -69,6 +69,8 @@
             this.plog_view = new System.Windows.Forms.ListView();
             this.tester_tblTableAdapter1 = new ppanam.ppanamDataSetTableAdapters.tester_tblTableAdapter();
             this.del_btn = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.type_Box = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -167,6 +169,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.type_Box);
+            this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.person_id_lb);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.p_box);
@@ -259,6 +263,9 @@
             // ans_box
             // 
             this.ans_box.FormattingEnabled = true;
+            this.ans_box.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
             this.ans_box.Location = new System.Drawing.Point(496, 18);
             this.ans_box.Name = "ans_box";
             this.ans_box.Size = new System.Drawing.Size(89, 20);
@@ -463,6 +470,27 @@
             this.del_btn.UseVisualStyleBackColor = true;
             this.del_btn.Click += new System.EventHandler(this.Del_btn_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(391, 190);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 12);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Type :";
+            // 
+            // type_Box
+            // 
+            this.type_Box.FormattingEnabled = true;
+            this.type_Box.Items.AddRange(new object[] {
+            "Tester",
+            "Ambassador",
+            "Influencer"});
+            this.type_Box.Location = new System.Drawing.Point(439, 187);
+            this.type_Box.Name = "type_Box";
+            this.type_Box.Size = new System.Drawing.Size(146, 20);
+            this.type_Box.TabIndex = 19;
+            // 
             // influencer_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -531,5 +559,7 @@
         private System.Windows.Forms.Label person_id_lb;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button del_btn;
+        private System.Windows.Forms.ComboBox type_Box;
+        private System.Windows.Forms.Label label14;
     }
 }

@@ -99,6 +99,7 @@ namespace ppanam
                     status_box.Text = rdr["status"].ToString();
                     ans_box.Text = rdr["answer"].ToString();
                     black_ch_box.Checked = Convert.ToBoolean(rdr["blacklist"]);
+                    type_Box.Text = rdr["type"].ToString();
                     string sql = "SELECT company_name FROM project_tbl WHERE pid = " + rdr["project_id"].ToString();
                     img_load(per_id);
                     MySqlConnection conn2 = new MySqlConnection(strConn);
@@ -132,6 +133,7 @@ namespace ppanam
             up_btn.Visible = false;
             mod_btn.Visible = true;
             p_box.ReadOnly = true;
+            type_Box.Enabled = false;
         }
 
         private void Modify_Mode()
@@ -151,6 +153,7 @@ namespace ppanam
             up_btn.Visible = true;
             mod_btn.Visible = false;
             p_box.ReadOnly = false;
+            type_Box.Enabled = true;
         }
 
         private void pic_file()
@@ -273,6 +276,7 @@ namespace ppanam
             string proj = p_box.Text;
             string person_id = person_id_lb.Text;
             bool bl_ck = Convert.ToBoolean(black_ch_box.Checked);
+            string tp = type_Box.Text;
 
             img_upload(person_id);
 
@@ -293,7 +297,8 @@ namespace ppanam
                     "', status ='" + stat +
                     "', answer ='" + ans +
                     "', blacklist =" + Convert.ToInt32(bl_ck) +
-                    " WHERE person_id =" + person_id;
+                    ", type = '"+tp+
+                    "' WHERE person_id =" + person_id;
             cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
 
