@@ -21,6 +21,7 @@ namespace ppanam
         private void init_list()
         {
             Readonly_Mode();
+            
             string sql_ = "SELECT person_id, p_name FROM influencer_tbl";
             influ_list.Items.Clear();
             string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
@@ -52,12 +53,13 @@ namespace ppanam
 
         private void Influ_list_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
+            
             //TODO - add "Project_log" Function, Image Function
             if (influ_list.SelectedIndices.Count > 0)
             {
                 string person_id = influ_list.SelectedItems[0].SubItems[0].Text;
                 string p_name = influ_list.SelectedItems[0].SubItems[1].Text;
-
+                pictureBox1.Image = null;
                 string sql_ = "SELECT * FROM influencer_tbl WHERE p_name = '" + p_name + "' and person_id =" + person_id;
                 string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
                 MySqlConnection conn = new MySqlConnection(strConn);
@@ -284,6 +286,33 @@ namespace ppanam
             conn.Close();
 
             Readonly_Mode();
+            init_list();
+        }
+
+        private void Create_btn_Click(object sender, EventArgs e)
+        {
+            //Modify_Mode();
+
+            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            MySqlConnection conn = new MySqlConnection(strConn);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            string sql_s = "SELECT COUNT(*) FROM influencer_tbl WHERE p_name = '_new_influencer'";
+            cmd.CommandText = sql_s;
+            int res = Convert.ToInt32(cmd.ExecuteScalar());
+            if (res == 0)
+            {
+                string sql = "INSERT INTO influencer_tbl(p_name) VALUES('_new_influencer')";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
+                MessageBox.Show("An unmodified name exists. Delete or modify.");
+            }
+            
+            conn.Close();
             init_list();
         }
     }
