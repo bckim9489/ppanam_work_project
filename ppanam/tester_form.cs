@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySql.Data.Common;
-
+ 
 namespace ppanam
 {
     public partial class tester_form : Form
@@ -28,6 +28,7 @@ namespace ppanam
             influencer_ck_box.Checked = false;
             req_box.Clear();
         }
+        
         public tester_form()
         {
             
@@ -48,10 +49,12 @@ namespace ppanam
             Ambassador,
             Influencer
         }
-        public void Start_Connect_DB()
+        public void Start_Connect_DB() //FIXME : require DB_connect function -> classful
         {
             string sql_ = "SELECT company_name, product_name FROM project_tbl";
             string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            //string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            //External IP 175.204.17.171, Internal IP 192.168.0.23;
             MySqlConnection conn = new MySqlConnection(strConn);
 
             conn.Open();

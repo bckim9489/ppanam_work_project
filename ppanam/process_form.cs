@@ -20,8 +20,8 @@ namespace ppanam
 
         private void Process_form_Load(object sender, EventArgs e)
         {
-            
-            
+            ambassador_init_list();
+            project_init_list();
         }
 
         private void ambassador_init_list()
@@ -91,8 +91,8 @@ namespace ppanam
                 {
                     blog = "No";
                 }
-                lvt.SubItems.Add(insta);
                 lvt.SubItems.Add(youtube);
+                lvt.SubItems.Add(insta);
                 lvt.SubItems.Add(blog);
                 lvt.SubItems.Add(rdr["requirement"].ToString());
                 amba_list.Items.Add(lvt);
