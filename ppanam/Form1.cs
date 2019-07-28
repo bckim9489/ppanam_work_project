@@ -52,14 +52,14 @@ namespace ppanam
         {
             foreach (Form form in Application.OpenForms)//창 열려 있는지 확인쓰
             {
-                if (form.GetType() == typeof(update_form))
+                if (form.GetType() == typeof(status_form))
                 {
                     form.Activate();
                     form.BringToFront();
                     return;
                 }
             }
-            update_form update_ = new update_form();
+            status_form update_ = new status_form();
             update_.MdiParent = this;
             update_.Dock = DockStyle.Fill;
             update_.Show();

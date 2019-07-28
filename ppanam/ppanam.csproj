@@ -69,11 +69,11 @@
     <Compile Include="np_form.Designer.cs">
       <DependentUpon>np_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="update_form.cs">
+    <Compile Include="status_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="update_form.Designer.cs">
-      <DependentUpon>update_form.cs</DependentUpon>
+    <Compile Include="status_form.Designer.cs">
+      <DependentUpon>status_form.cs</DependentUpon>
     </Compile>
     <Compile Include="influencer_form.cs">
       <SubType>Form</SubType>
@@ -109,8 +109,8 @@
     <EmbeddedResource Include="np_form.resx">
       <DependentUpon>np_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="update_form.resx">
-      <DependentUpon>update_form.cs</DependentUpon>
+    <EmbeddedResource Include="status_form.resx">
+      <DependentUpon>status_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="influencer_form.resx">
       <DependentUpon>influencer_form.cs</DependentUpon>

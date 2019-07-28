@@ -1,6 +1,6 @@
 ﻿namespace ppanam
 {
-    partial class update_form
+    partial class status_form
     {
         /// <summary>
         /// Required designer variable.

@@ -35,11 +35,12 @@
             this.projectLoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teskUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.appToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ppanamDataSet1 = new ppanam.ppanamDataSet();
-            this.modelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ppanamDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,8 @@
             this.mainToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.processWriteToolStripMenuItem,
             this.projectLoadToolStripMenuItem,
-            this.modelToolStripMenuItem});
+            this.modelToolStripMenuItem,
+            this.deliveryToolStripMenuItem});
             this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
             this.mainToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.mainToolStripMenuItem.Text = "Main";
@@ -65,7 +67,7 @@
             // testerToolStripMenuItem
             // 
             this.testerToolStripMenuItem.Name = "testerToolStripMenuItem";
-            this.testerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.testerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.testerToolStripMenuItem.Text = "Registrate";
             this.testerToolStripMenuItem.Click += new System.EventHandler(this.TesterToolStripMenuItem_Click);
             // 
@@ -91,6 +93,13 @@
             this.teskUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.teskUpToolStripMenuItem.Text = "Update";
             this.teskUpToolStripMenuItem.Click += new System.EventHandler(this.TeskUpToolStripMenuItem_Click);
+            // 
+            // modelToolStripMenuItem
+            // 
+            this.modelToolStripMenuItem.Name = "modelToolStripMenuItem";
+            this.modelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modelToolStripMenuItem.Text = "Model";
+            this.modelToolStripMenuItem.Click += new System.EventHandler(this.ModelToolStripMenuItem_Click);
             // 
             // appToolStripMenuItem
             // 
@@ -124,12 +133,11 @@
             this.ppanamDataSet1.DataSetName = "ppanamDataSet";
             this.ppanamDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // modelToolStripMenuItem
+            // deliveryToolStripMenuItem
             // 
-            this.modelToolStripMenuItem.Name = "modelToolStripMenuItem";
-            this.modelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modelToolStripMenuItem.Text = "Model";
-            this.modelToolStripMenuItem.Click += new System.EventHandler(this.ModelToolStripMenuItem_Click);
+            this.deliveryToolStripMenuItem.Name = "deliveryToolStripMenuItem";
+            this.deliveryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deliveryToolStripMenuItem.Text = "Delivery";
             // 
             // Form1
             // 
@@ -169,6 +177,7 @@
         private System.Windows.Forms.ToolStripMenuItem statusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem teskUpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deliveryToolStripMenuItem;
     }
 }
 

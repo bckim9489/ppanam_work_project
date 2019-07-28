@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace ppanam
 {
-    public partial class update_form : Form
+    public partial class status_form : Form
     {
-        public update_form()
+        public status_form()
         {
             InitializeComponent();
         }
