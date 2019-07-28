@@ -30,34 +30,36 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tester_tab = new System.Windows.Forms.TabPage();
+            this.te_pro_list = new System.Windows.Forms.ListView();
+            this.tester_list = new System.Windows.Forms.ListView();
             this.ambas_tab = new System.Windows.Forms.TabPage();
-            this.Process_tabs = new System.Windows.Forms.TabControl();
-            this.influ_tab = new System.Windows.Forms.TabPage();
-            this.test_list = new System.Windows.Forms.ListView();
-            this.test_pro_list = new System.Windows.Forms.ListView();
+            this.reset_btn = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.amba_pro_list = new System.Windows.Forms.ListView();
-            this.amba_list = new System.Windows.Forms.ListView();
-            this.influ_pro_list = new System.Windows.Forms.ListView();
-            this.influ_list = new System.Windows.Forms.ListView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.push_btn = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.pop_button = new System.Windows.Forms.Button();
             this.conf_btn = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.apply_btn = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.amba_list = new System.Windows.Forms.ListView();
+            this.selected_list = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.male_box = new System.Windows.Forms.CheckBox();
             this.female_box = new System.Windows.Forms.CheckBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.reset_btn = new System.Windows.Forms.Button();
+            this.male_box = new System.Windows.Forms.CheckBox();
+            this.apply_btn = new System.Windows.Forms.Button();
+            this.req_ch_box = new System.Windows.Forms.CheckBox();
+            this.Process_tabs = new System.Windows.Forms.TabControl();
+            this.influ_tab = new System.Windows.Forms.TabPage();
+            this.influ_pro_list = new System.Windows.Forms.ListView();
+            this.influ_list = new System.Windows.Forms.ListView();
+            this.person_id_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.p_name_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tester_tab.SuspendLayout();
             this.ambas_tab.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.Process_tabs.SuspendLayout();
             this.influ_tab.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -72,8 +74,8 @@
             // 
             // tester_tab
             // 
-            this.tester_tab.Controls.Add(this.amba_pro_list);
-            this.tester_tab.Controls.Add(this.amba_list);
+            this.tester_tab.Controls.Add(this.te_pro_list);
+            this.tester_tab.Controls.Add(this.tester_list);
             this.tester_tab.Location = new System.Drawing.Point(4, 25);
             this.tester_tab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tester_tab.Name = "tester_tab";
@@ -82,6 +84,22 @@
             this.tester_tab.TabIndex = 1;
             this.tester_tab.Text = "Tester";
             this.tester_tab.UseVisualStyleBackColor = true;
+            // 
+            // te_pro_list
+            // 
+            this.te_pro_list.Location = new System.Drawing.Point(271, 16);
+            this.te_pro_list.Name = "te_pro_list";
+            this.te_pro_list.Size = new System.Drawing.Size(642, 178);
+            this.te_pro_list.TabIndex = 3;
+            this.te_pro_list.UseCompatibleStateImageBehavior = false;
+            // 
+            // tester_list
+            // 
+            this.tester_list.Location = new System.Drawing.Point(18, 16);
+            this.tester_list.Name = "tester_list";
+            this.tester_list.Size = new System.Drawing.Size(231, 379);
+            this.tester_list.TabIndex = 2;
+            this.tester_list.UseCompatibleStateImageBehavior = false;
             // 
             // ambas_tab
             // 
@@ -96,6 +114,154 @@
             this.ambas_tab.TabIndex = 0;
             this.ambas_tab.Text = "Ambassador";
             this.ambas_tab.UseVisualStyleBackColor = true;
+            // 
+            // reset_btn
+            // 
+            this.reset_btn.Location = new System.Drawing.Point(785, 194);
+            this.reset_btn.Name = "reset_btn";
+            this.reset_btn.Size = new System.Drawing.Size(94, 23);
+            this.reset_btn.TabIndex = 11;
+            this.reset_btn.Text = "Reset";
+            this.reset_btn.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.amba_pro_list);
+            this.groupBox1.Location = new System.Drawing.Point(61, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(818, 182);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Project list";
+            // 
+            // amba_pro_list
+            // 
+            this.amba_pro_list.FullRowSelect = true;
+            this.amba_pro_list.GridLines = true;
+            this.amba_pro_list.Location = new System.Drawing.Point(6, 24);
+            this.amba_pro_list.MultiSelect = false;
+            this.amba_pro_list.Name = "amba_pro_list";
+            this.amba_pro_list.Size = new System.Drawing.Size(803, 149);
+            this.amba_pro_list.TabIndex = 1;
+            this.amba_pro_list.UseCompatibleStateImageBehavior = false;
+            this.amba_pro_list.View = System.Windows.Forms.View.Details;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.push_btn);
+            this.groupBox3.Controls.Add(this.pop_button);
+            this.groupBox3.Controls.Add(this.conf_btn);
+            this.groupBox3.Controls.Add(this.amba_list);
+            this.groupBox3.Controls.Add(this.selected_list);
+            this.groupBox3.Controls.Add(this.groupBox2);
+            this.groupBox3.Location = new System.Drawing.Point(61, 223);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(818, 308);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Model list";
+            // 
+            // push_btn
+            // 
+            this.push_btn.Location = new System.Drawing.Point(277, 45);
+            this.push_btn.Name = "push_btn";
+            this.push_btn.Size = new System.Drawing.Size(75, 94);
+            this.push_btn.TabIndex = 2;
+            this.push_btn.Text = "Push";
+            this.push_btn.UseVisualStyleBackColor = true;
+            // 
+            // pop_button
+            // 
+            this.pop_button.Location = new System.Drawing.Point(277, 184);
+            this.pop_button.Name = "pop_button";
+            this.pop_button.Size = new System.Drawing.Size(75, 94);
+            this.pop_button.TabIndex = 4;
+            this.pop_button.Text = "Pop";
+            this.pop_button.UseVisualStyleBackColor = true;
+            // 
+            // conf_btn
+            // 
+            this.conf_btn.Location = new System.Drawing.Point(636, 206);
+            this.conf_btn.Name = "conf_btn";
+            this.conf_btn.Size = new System.Drawing.Size(173, 96);
+            this.conf_btn.TabIndex = 5;
+            this.conf_btn.Text = "Confirm";
+            this.conf_btn.UseVisualStyleBackColor = true;
+            // 
+            // amba_list
+            // 
+            this.amba_list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.person_id_col,
+            this.p_name_col});
+            this.amba_list.FullRowSelect = true;
+            this.amba_list.GridLines = true;
+            this.amba_list.Location = new System.Drawing.Point(6, 21);
+            this.amba_list.MultiSelect = false;
+            this.amba_list.Name = "amba_list";
+            this.amba_list.Size = new System.Drawing.Size(231, 281);
+            this.amba_list.TabIndex = 0;
+            this.amba_list.UseCompatibleStateImageBehavior = false;
+            this.amba_list.View = System.Windows.Forms.View.Details;
+            // 
+            // selected_list
+            // 
+            this.selected_list.Location = new System.Drawing.Point(389, 21);
+            this.selected_list.Name = "selected_list";
+            this.selected_list.Size = new System.Drawing.Size(231, 281);
+            this.selected_list.TabIndex = 3;
+            this.selected_list.UseCompatibleStateImageBehavior = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.female_box);
+            this.groupBox2.Controls.Add(this.male_box);
+            this.groupBox2.Controls.Add(this.apply_btn);
+            this.groupBox2.Controls.Add(this.req_ch_box);
+            this.groupBox2.Location = new System.Drawing.Point(636, 21);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(173, 179);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "조건 검색";
+            // 
+            // female_box
+            // 
+            this.female_box.AutoSize = true;
+            this.female_box.Location = new System.Drawing.Point(30, 76);
+            this.female_box.Name = "female_box";
+            this.female_box.Size = new System.Drawing.Size(75, 19);
+            this.female_box.TabIndex = 9;
+            this.female_box.Text = "Female";
+            this.female_box.UseVisualStyleBackColor = true;
+            // 
+            // male_box
+            // 
+            this.male_box.AutoSize = true;
+            this.male_box.Location = new System.Drawing.Point(30, 50);
+            this.male_box.Name = "male_box";
+            this.male_box.Size = new System.Drawing.Size(60, 19);
+            this.male_box.TabIndex = 8;
+            this.male_box.Text = "Male";
+            this.male_box.UseVisualStyleBackColor = true;
+            // 
+            // apply_btn
+            // 
+            this.apply_btn.Location = new System.Drawing.Point(30, 150);
+            this.apply_btn.Name = "apply_btn";
+            this.apply_btn.Size = new System.Drawing.Size(109, 23);
+            this.apply_btn.TabIndex = 7;
+            this.apply_btn.Text = "Apply";
+            this.apply_btn.UseVisualStyleBackColor = true;
+            // 
+            // req_ch_box
+            // 
+            this.req_ch_box.AutoSize = true;
+            this.req_ch_box.Location = new System.Drawing.Point(30, 24);
+            this.req_ch_box.Name = "req_ch_box";
+            this.req_ch_box.Size = new System.Drawing.Size(109, 19);
+            this.req_ch_box.TabIndex = 6;
+            this.req_ch_box.Text = "Requirement";
+            this.req_ch_box.UseVisualStyleBackColor = true;
             // 
             // Process_tabs
             // 
@@ -122,38 +288,6 @@
             this.influ_tab.Text = "Influencer";
             this.influ_tab.UseVisualStyleBackColor = true;
             // 
-            // test_list
-            // 
-            this.test_list.Location = new System.Drawing.Point(6, 21);
-            this.test_list.Name = "test_list";
-            this.test_list.Size = new System.Drawing.Size(231, 281);
-            this.test_list.TabIndex = 0;
-            this.test_list.UseCompatibleStateImageBehavior = false;
-            // 
-            // test_pro_list
-            // 
-            this.test_pro_list.Location = new System.Drawing.Point(6, 24);
-            this.test_pro_list.Name = "test_pro_list";
-            this.test_pro_list.Size = new System.Drawing.Size(803, 149);
-            this.test_pro_list.TabIndex = 1;
-            this.test_pro_list.UseCompatibleStateImageBehavior = false;
-            // 
-            // amba_pro_list
-            // 
-            this.amba_pro_list.Location = new System.Drawing.Point(271, 16);
-            this.amba_pro_list.Name = "amba_pro_list";
-            this.amba_pro_list.Size = new System.Drawing.Size(642, 178);
-            this.amba_pro_list.TabIndex = 3;
-            this.amba_pro_list.UseCompatibleStateImageBehavior = false;
-            // 
-            // amba_list
-            // 
-            this.amba_list.Location = new System.Drawing.Point(18, 16);
-            this.amba_list.Name = "amba_list";
-            this.amba_list.Size = new System.Drawing.Size(231, 379);
-            this.amba_list.TabIndex = 2;
-            this.amba_list.UseCompatibleStateImageBehavior = false;
-            // 
             // influ_pro_list
             // 
             this.influ_pro_list.Location = new System.Drawing.Point(271, 16);
@@ -170,126 +304,15 @@
             this.influ_list.TabIndex = 4;
             this.influ_list.UseCompatibleStateImageBehavior = false;
             // 
-            // push_btn
+            // person_id_col
             // 
-            this.push_btn.Location = new System.Drawing.Point(277, 45);
-            this.push_btn.Name = "push_btn";
-            this.push_btn.Size = new System.Drawing.Size(75, 94);
-            this.push_btn.TabIndex = 2;
-            this.push_btn.Text = "Push";
-            this.push_btn.UseVisualStyleBackColor = true;
+            this.person_id_col.Text = "ID";
+            this.person_id_col.Width = 50;
             // 
-            // listView1
+            // p_name_col
             // 
-            this.listView1.Location = new System.Drawing.Point(389, 21);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(231, 281);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // pop_button
-            // 
-            this.pop_button.Location = new System.Drawing.Point(277, 184);
-            this.pop_button.Name = "pop_button";
-            this.pop_button.Size = new System.Drawing.Size(75, 94);
-            this.pop_button.TabIndex = 4;
-            this.pop_button.Text = "Pop";
-            this.pop_button.UseVisualStyleBackColor = true;
-            // 
-            // conf_btn
-            // 
-            this.conf_btn.Location = new System.Drawing.Point(636, 206);
-            this.conf_btn.Name = "conf_btn";
-            this.conf_btn.Size = new System.Drawing.Size(173, 96);
-            this.conf_btn.TabIndex = 5;
-            this.conf_btn.Text = "Confirm";
-            this.conf_btn.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(30, 24);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(109, 19);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Requirement";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // apply_btn
-            // 
-            this.apply_btn.Location = new System.Drawing.Point(30, 150);
-            this.apply_btn.Name = "apply_btn";
-            this.apply_btn.Size = new System.Drawing.Size(109, 23);
-            this.apply_btn.TabIndex = 7;
-            this.apply_btn.Text = "Apply";
-            this.apply_btn.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.test_pro_list);
-            this.groupBox1.Location = new System.Drawing.Point(61, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(818, 182);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Project list";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.female_box);
-            this.groupBox2.Controls.Add(this.male_box);
-            this.groupBox2.Controls.Add(this.apply_btn);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Location = new System.Drawing.Point(636, 21);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(173, 179);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "조건 검색";
-            // 
-            // male_box
-            // 
-            this.male_box.AutoSize = true;
-            this.male_box.Location = new System.Drawing.Point(30, 50);
-            this.male_box.Name = "male_box";
-            this.male_box.Size = new System.Drawing.Size(60, 19);
-            this.male_box.TabIndex = 8;
-            this.male_box.Text = "Male";
-            this.male_box.UseVisualStyleBackColor = true;
-            // 
-            // female_box
-            // 
-            this.female_box.AutoSize = true;
-            this.female_box.Location = new System.Drawing.Point(30, 76);
-            this.female_box.Name = "female_box";
-            this.female_box.Size = new System.Drawing.Size(75, 19);
-            this.female_box.TabIndex = 9;
-            this.female_box.Text = "Female";
-            this.female_box.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.push_btn);
-            this.groupBox3.Controls.Add(this.pop_button);
-            this.groupBox3.Controls.Add(this.conf_btn);
-            this.groupBox3.Controls.Add(this.test_list);
-            this.groupBox3.Controls.Add(this.listView1);
-            this.groupBox3.Controls.Add(this.groupBox2);
-            this.groupBox3.Location = new System.Drawing.Point(61, 223);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(818, 308);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Model list";
-            // 
-            // reset_btn
-            // 
-            this.reset_btn.Location = new System.Drawing.Point(785, 194);
-            this.reset_btn.Name = "reset_btn";
-            this.reset_btn.Size = new System.Drawing.Size(94, 23);
-            this.reset_btn.TabIndex = 11;
-            this.reset_btn.Text = "Reset";
-            this.reset_btn.UseVisualStyleBackColor = true;
+            this.p_name_col.Text = "Name";
+            this.p_name_col.Width = 173;
             // 
             // process_form
             // 
@@ -302,14 +325,15 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "process_form";
             this.Text = "process_form";
+            this.Load += new System.EventHandler(this.Process_form_Load);
             this.tester_tab.ResumeLayout(false);
             this.ambas_tab.ResumeLayout(false);
-            this.Process_tabs.ResumeLayout(false);
-            this.influ_tab.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            this.Process_tabs.ResumeLayout(false);
+            this.influ_tab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,17 +346,17 @@
         private System.Windows.Forms.TabPage ambas_tab;
         private System.Windows.Forms.TabControl Process_tabs;
         private System.Windows.Forms.TabPage influ_tab;
-        private System.Windows.Forms.ListView test_pro_list;
-        private System.Windows.Forms.ListView test_list;
         private System.Windows.Forms.ListView amba_pro_list;
         private System.Windows.Forms.ListView amba_list;
+        private System.Windows.Forms.ListView te_pro_list;
+        private System.Windows.Forms.ListView tester_list;
         private System.Windows.Forms.ListView influ_pro_list;
         private System.Windows.Forms.ListView influ_list;
         private System.Windows.Forms.Button apply_btn;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox req_ch_box;
         private System.Windows.Forms.Button conf_btn;
         private System.Windows.Forms.Button pop_button;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView selected_list;
         private System.Windows.Forms.Button push_btn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -340,5 +364,7 @@
         private System.Windows.Forms.CheckBox female_box;
         private System.Windows.Forms.CheckBox male_box;
         private System.Windows.Forms.Button reset_btn;
+        private System.Windows.Forms.ColumnHeader person_id_col;
+        private System.Windows.Forms.ColumnHeader p_name_col;
     }
 }
