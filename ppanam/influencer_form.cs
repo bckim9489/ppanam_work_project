@@ -51,6 +51,10 @@ namespace ppanam
             emali_box.Text = "";
             status_box.Text = "";
             ans_box.Text = "";
+            p_box.Text = "";
+            addr_box.Text = "";
+            type_Box.Text = "";
+            pictureBox1.Image = null;
             black_ch_box.Checked = false;
 
             conn.Close();
@@ -100,6 +104,7 @@ namespace ppanam
                     ans_box.Text = rdr["answer"].ToString();
                     black_ch_box.Checked = Convert.ToBoolean(rdr["blacklist"]);
                     type_Box.Text = rdr["type"].ToString();
+                    addr_box.Text = rdr["address"].ToString();
                     string sql = "SELECT company_name FROM project_tbl WHERE pid = " + rdr["project_id"].ToString();
                     img_load(per_id);
                     MySqlConnection conn2 = new MySqlConnection(strConn);
@@ -134,6 +139,7 @@ namespace ppanam
             mod_btn.Visible = true;
             p_box.ReadOnly = true;
             type_Box.Enabled = false;
+            addr_box.ReadOnly = true;
         }
 
         private void Modify_Mode()
@@ -152,8 +158,9 @@ namespace ppanam
             pic_uplo_btn.Visible = true;
             up_btn.Visible = true;
             mod_btn.Visible = false;
-            p_box.ReadOnly = false;
+            //p_box.ReadOnly = false;
             type_Box.Enabled = true;
+            addr_box.ReadOnly = false;
         }
 
         private void pic_file()
@@ -277,7 +284,7 @@ namespace ppanam
             string person_id = person_id_lb.Text;
             bool bl_ck = Convert.ToBoolean(black_ch_box.Checked);
             string tp = type_Box.Text;
-
+            string addr = addr_box.Text;
             img_upload(person_id);
 
             string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
@@ -298,6 +305,7 @@ namespace ppanam
                     "', answer ='" + ans +
                     "', blacklist =" + Convert.ToInt32(bl_ck) +
                     ", type = '"+tp+
+                    "', address = '"+addr+
                     "' WHERE person_id =" + person_id;
             cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
@@ -351,6 +359,11 @@ namespace ppanam
             
             conn.Close();
             init_list();
+        }
+
+        private void Plog_view_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

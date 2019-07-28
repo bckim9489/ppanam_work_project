@@ -36,12 +36,23 @@
             this.reset_btn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.amba_pro_list = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.push_btn = new System.Windows.Forms.Button();
             this.pop_button = new System.Windows.Forms.Button();
             this.conf_btn = new System.Windows.Forms.Button();
             this.amba_list = new System.Windows.Forms.ListView();
+            this.person_id_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.p_name_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.selected_list = new System.Windows.Forms.ListView();
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.female_box = new System.Windows.Forms.CheckBox();
             this.male_box = new System.Windows.Forms.CheckBox();
@@ -51,17 +62,7 @@
             this.influ_tab = new System.Windows.Forms.TabPage();
             this.influ_pro_list = new System.Windows.Forms.ListView();
             this.influ_list = new System.Windows.Forms.ListView();
-            this.person_id_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.p_name_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tp_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tester_tab.SuspendLayout();
             this.ambas_tab.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -152,7 +153,8 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader7});
+            this.columnHeader7,
+            this.tp_col});
             this.amba_pro_list.FullRowSelect = true;
             this.amba_pro_list.GridLines = true;
             this.amba_pro_list.Location = new System.Drawing.Point(6, 24);
@@ -162,6 +164,42 @@
             this.amba_pro_list.TabIndex = 1;
             this.amba_pro_list.UseCompatibleStateImageBehavior = false;
             this.amba_pro_list.View = System.Windows.Forms.View.Details;
+            this.amba_pro_list.SelectedIndexChanged += new System.EventHandler(this.Amba_pro_list_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "PID";
+            this.columnHeader1.Width = 46;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Company";
+            this.columnHeader2.Width = 169;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Product";
+            this.columnHeader3.Width = 114;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Youtube";
+            this.columnHeader4.Width = 65;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Instagram";
+            this.columnHeader5.Width = 74;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Blog";
+            this.columnHeader6.Width = 51;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Requirement";
+            this.columnHeader7.Width = 280;
             // 
             // groupBox3
             // 
@@ -220,6 +258,16 @@
             this.amba_list.UseCompatibleStateImageBehavior = false;
             this.amba_list.View = System.Windows.Forms.View.Details;
             // 
+            // person_id_col
+            // 
+            this.person_id_col.Text = "ID";
+            this.person_id_col.Width = 50;
+            // 
+            // p_name_col
+            // 
+            this.p_name_col.Text = "Name";
+            this.p_name_col.Width = 177;
+            // 
             // selected_list
             // 
             this.selected_list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -234,6 +282,16 @@
             this.selected_list.TabIndex = 3;
             this.selected_list.UseCompatibleStateImageBehavior = false;
             this.selected_list.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "ID";
+            this.columnHeader8.Width = 50;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Name";
+            this.columnHeader9.Width = 177;
             // 
             // groupBox2
             // 
@@ -328,59 +386,9 @@
             this.influ_list.TabIndex = 4;
             this.influ_list.UseCompatibleStateImageBehavior = false;
             // 
-            // person_id_col
+            // tp_col
             // 
-            this.person_id_col.Text = "ID";
-            this.person_id_col.Width = 50;
-            // 
-            // p_name_col
-            // 
-            this.p_name_col.Text = "Name";
-            this.p_name_col.Width = 173;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "PID";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Company";
-            this.columnHeader2.Width = 169;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Product";
-            this.columnHeader3.Width = 114;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Youtube";
-            this.columnHeader4.Width = 65;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Instagram";
-            this.columnHeader5.Width = 74;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Blog";
-            this.columnHeader6.Width = 51;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Requirement";
-            this.columnHeader7.Width = 266;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "ID";
-            this.columnHeader8.Width = 50;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Name";
-            this.columnHeader9.Width = 173;
+            this.tp_col.Text = "Type";
             // 
             // process_form
             // 
@@ -443,5 +451,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader tp_col;
     }
 }

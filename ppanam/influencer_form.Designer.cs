@@ -39,6 +39,8 @@
             this.mod_btn = new System.Windows.Forms.Button();
             this.reset_btn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.addr_box = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.type_Box = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.person_id_lb = new System.Windows.Forms.Label();
@@ -71,10 +73,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.plog_view = new System.Windows.Forms.ListView();
             this.tester_tblTableAdapter1 = new ppanam.ppanamDataSetTableAdapters.tester_tblTableAdapter();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -146,7 +144,7 @@
             // 
             // up_btn
             // 
-            this.up_btn.Location = new System.Drawing.Point(181, 436);
+            this.up_btn.Location = new System.Drawing.Point(180, 436);
             this.up_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.up_btn.Name = "up_btn";
             this.up_btn.Size = new System.Drawing.Size(72, 55);
@@ -191,15 +189,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.addr_box);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.type_Box);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.person_id_lb);
-            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.p_box);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.black_ch_box);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.pic_uplo_btn);
@@ -209,7 +206,6 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.emali_box);
             this.groupBox2.Controls.Add(this.blog_box);
-            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.subs_box);
@@ -232,6 +228,22 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detail";
+            // 
+            // addr_box
+            // 
+            this.addr_box.Location = new System.Drawing.Point(290, 269);
+            this.addr_box.Name = "addr_box";
+            this.addr_box.Size = new System.Drawing.Size(378, 25);
+            this.addr_box.TabIndex = 21;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(200, 274);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(75, 15);
+            this.label15.TabIndex = 20;
+            this.label15.Text = "Address : ";
             // 
             // type_Box
             // 
@@ -275,7 +287,7 @@
             // 
             // p_box
             // 
-            this.p_box.Location = new System.Drawing.Point(290, 267);
+            this.p_box.Location = new System.Drawing.Point(290, 302);
             this.p_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.p_box.Name = "p_box";
             this.p_box.Size = new System.Drawing.Size(378, 25);
@@ -375,11 +387,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(200, 270);
+            this.label12.Location = new System.Drawing.Point(200, 305);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 15);
+            this.label12.Size = new System.Drawing.Size(63, 15);
             this.label12.TabIndex = 9;
-            this.label12.Text = "Projecting :";
+            this.label12.Text = "Project :";
             // 
             // label10
             // 
@@ -522,43 +534,11 @@
             this.plog_view.Size = new System.Drawing.Size(673, 156);
             this.plog_view.TabIndex = 17;
             this.plog_view.UseCompatibleStateImageBehavior = false;
+            this.plog_view.SelectedIndexChanged += new System.EventHandler(this.Plog_view_SelectedIndexChanged);
             // 
             // tester_tblTableAdapter1
             // 
             this.tester_tblTableAdapter1.ClearBeforeFill = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(200, 304);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(75, 15);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "Address : ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(290, 299);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(378, 25);
-            this.textBox1.TabIndex = 21;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(69, 299);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 22;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(5, 304);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 15);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "Type :";
             // 
             // influencer_form
             // 
@@ -630,9 +610,7 @@
         private System.Windows.Forms.Button del_btn;
         private System.Windows.Forms.ComboBox type_Box;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox addr_box;
         private System.Windows.Forms.Label label15;
     }
 }
