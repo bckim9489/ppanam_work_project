@@ -49,7 +49,21 @@ namespace ppanam
             }
             conn.Close();
         }
-        
+
+        private string[] Parser_func(int flag)
+        {
+            string[] result = { "0" } ;
+            if (flag != 0)
+            {
+                string parse_target = amba_pro_list.SelectedItems[0].SubItems[6].Text;
+                //int index_key = 0;
+                char sp = '#';
+                string[] parse_string = parse_target.Split(sp);
+                return parse_string;
+            }
+            return result;
+        }
+
         private void project_init_list()
         {
             amba_pro_list.Items.Clear();
@@ -156,7 +170,16 @@ namespace ppanam
                 int b_int = Convert.ToInt32(blog);
                 //int tp_flag =Convert.ToInt32(amba_pro_list.SelectedItems[0].SubItems[7].Text);
                 string sql_sum = "";
+                string[] opt = Parser_func(req_flag);
+                for(int i = 0; i<opt.Length; i++)
+                {
+                    System.Console.WriteLine(opt[i]);
+                }
                 
+                if(req_flag != 0)
+                {
+
+                }
                 if ((y_int+i_int+b_int)!=0)
                 {
                     sql_sum += " and (";
@@ -325,13 +348,25 @@ namespace ppanam
             {
                 req_flag = 1;
             }
+            else
+            {
+                req_flag = 0;
+            }
             if(male_box.Checked == true)
             {
                 m_flag = 1;
             }
-            if(female_box.Checked == true)
+            else
+            {
+                m_flag = 0;
+            }
+            if (female_box.Checked == true)
             {
                 fe_flag = 1;
+            }
+            else
+            {
+                fe_flag = 0;
             }
         }
     }

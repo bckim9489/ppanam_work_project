@@ -122,6 +122,8 @@ namespace ppanam
             }
         }
 
+        
+
         private void Readonly_Mode()
         {
             name_box.ReadOnly = true;
