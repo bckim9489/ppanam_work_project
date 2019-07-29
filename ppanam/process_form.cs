@@ -13,6 +13,10 @@ namespace ppanam
 {
     public partial class process_form : Form
     {
+        int req_flag = 0;
+        int m_flag = 0;
+        int fe_flag = 0;
+
         public process_form()
         {
             InitializeComponent();
@@ -139,6 +143,7 @@ namespace ppanam
             if (amba_pro_list.SelectedIndices.Count > 0)
             {
                 amba_list.Items.Clear();
+                selected_list.Items.Clear();
                 string pid = amba_pro_list.SelectedItems[0].SubItems[0].Text;
                 string company_name = amba_pro_list.SelectedItems[0].SubItems[1].Text;
                 string product_name = amba_pro_list.SelectedItems[0].SubItems[2].Text;
@@ -204,7 +209,129 @@ namespace ppanam
                     }
                     amba_list.Items.Add(lvt);
                 }
+
+                sql_ = "SELECT person_id, p_name, type, answer FROM influencer_tbl " +
+                    "WHERE blacklist = 0 and type = 'Ambassador'" +
+                    "and project_id = " + pid;
                 conn.Close();
+                conn.Open();
+                cmd.CommandText = sql_;
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    ListViewItem lvt = new ListViewItem();
+                    lvt.Text = rdr["person_id"].ToString();
+                    lvt.SubItems.Add(rdr["p_name"].ToString());
+                    if (rdr["answer"].ToString().Equals("No"))
+                    {
+                        lvt.SubItems[1].Text += "  [ N ]";
+                    }
+                    selected_list.Items.Add(lvt);
+                }
+                conn.Close();
+            }
+        }
+
+        private void Push_btn_Click(object sender, EventArgs e)
+        {
+            if(amba_list.SelectedItems.Count > 0)
+            {
+                ListViewItem lvt = amba_list.SelectedItems[0];
+                amba_list.Items.Remove(lvt);
+                selected_list.Items.Add(lvt);
+            }
+        }
+
+        private void Pop_button_Click(object sender, EventArgs e)
+        {
+            
+            if(selected_list.SelectedItems.Count > 0)
+            {
+                ListViewItem lvt = selected_list.SelectedItems[0];
+                selected_list.Items.Remove(lvt);
+                amba_list.Items.Add(lvt);
+            }
+            
+        }
+
+        private void Reset_btn_Click(object sender, EventArgs e)
+        {
+            project_init_list();
+            ambassador_init_list();
+        }
+
+        private void Conf_btn_Click(object sender, EventArgs e)
+        {
+            int result = 0;
+            int result2 = 0;
+            int cnt = selected_list.Items.Count;
+            if (cnt > 0)
+            {
+                for (int i = 0; i < selected_list.Items.Count; i++)
+                {
+                    string person_id = selected_list.Items[i].SubItems[0].Text;
+                    string pid = amba_pro_list.SelectedItems[0].SubItems[0].Text;
+                    string sql_ = "UPDATE influencer_tbl SET project_id = " + pid + " WHERE person_id = " + person_id;
+                    string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+                    MySqlConnection conn = new MySqlConnection(strConn);
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandText = sql_;
+                    result = cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+            cnt = amba_list.Items.Count;
+            if(cnt > 0)
+            {
+                for (int i = 0; i < amba_list.Items.Count; i++)
+                {
+                    string person_id = amba_list.Items[i].SubItems[0].Text;
+                    string pid = "0";
+                    string sql_ = "UPDATE influencer_tbl SET project_id = " + pid + " WHERE person_id = " + person_id;
+                    string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+                    MySqlConnection conn = new MySqlConnection(strConn);
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandText = sql_;
+                    result2 = cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+            
+            if (result != -1 && result2 != -1)
+            {
+                MessageBox.Show("Success!");
+            }
+            else
+            {
+                MessageBox.Show("Can't Apply");
+            }
+        }
+        private void Apply_reset()
+        {
+            req_ch_box.Checked = false;
+            male_box.Checked = false;
+            female_box.Checked = false;
+            req_flag = 0;
+            m_flag = 0;
+            fe_flag = 0;
+        }
+        private void Apply_btn_Click(object sender, EventArgs e)
+        {
+            if(req_ch_box.Checked == true)
+            {
+                req_flag = 1;
+            }
+            if(male_box.Checked == true)
+            {
+                m_flag = 1;
+            }
+            if(female_box.Checked == true)
+            {
+                fe_flag = 1;
             }
         }
     }

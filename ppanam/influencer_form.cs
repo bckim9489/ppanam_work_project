@@ -56,7 +56,7 @@ namespace ppanam
             type_Box.Text = "";
             pictureBox1.Image = null;
             black_ch_box.Checked = false;
-
+            g_box.Text = "";
             conn.Close();
         }
         private void Influencer_form_Load(object sender, EventArgs e)
@@ -105,6 +105,7 @@ namespace ppanam
                     black_ch_box.Checked = Convert.ToBoolean(rdr["blacklist"]);
                     type_Box.Text = rdr["type"].ToString();
                     addr_box.Text = rdr["address"].ToString();
+                    g_box.Text = rdr["gender"].ToString();
                     string sql = "SELECT company_name FROM project_tbl WHERE pid = " + rdr["project_id"].ToString();
                     img_load(per_id);
                     MySqlConnection conn2 = new MySqlConnection(strConn);
@@ -140,6 +141,7 @@ namespace ppanam
             p_box.ReadOnly = true;
             type_Box.Enabled = false;
             addr_box.ReadOnly = true;
+            g_box.Enabled = false;
         }
 
         private void Modify_Mode()
@@ -161,6 +163,7 @@ namespace ppanam
             //p_box.ReadOnly = false;
             type_Box.Enabled = true;
             addr_box.ReadOnly = false;
+            g_box.Enabled = true;
         }
 
         private void pic_file()
@@ -285,6 +288,7 @@ namespace ppanam
             bool bl_ck = Convert.ToBoolean(black_ch_box.Checked);
             string tp = type_Box.Text;
             string addr = addr_box.Text;
+            string gend = g_box.Text;
             img_upload(person_id);
 
             string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
@@ -306,6 +310,7 @@ namespace ppanam
                     "', blacklist =" + Convert.ToInt32(bl_ck) +
                     ", type = '"+tp+
                     "', address = '"+addr+
+                    "', gender = '"+gend+
                     "' WHERE person_id =" + person_id;
             cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
