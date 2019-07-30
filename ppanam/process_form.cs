@@ -79,9 +79,11 @@ namespace ppanam
             while (rdr.Read())
             {
                 string ty_flag = "";
+                
                 string youtube = "";
                 string insta = "";
                 string blog = "";
+                
                 ListViewItem lvt = new ListViewItem();
                 lvt.Text = rdr["pid"].ToString();
                 lvt.SubItems.Add(rdr["company_name"].ToString());
@@ -171,15 +173,50 @@ namespace ppanam
                 //int tp_flag =Convert.ToInt32(amba_pro_list.SelectedItems[0].SubItems[7].Text);
                 string sql_sum = "";
                 string[] opt = Parser_func(req_flag);
-                for(int i = 0; i<opt.Length; i++)
+                /*
+                for (int i = 0; i<opt.Length; i++)
                 {
                     System.Console.WriteLine(opt[i]);
                 }
+                */
                 
-                if(req_flag != 0)
+                if (req_flag != 0 && !opt.Equals("0") && req.Contains('#') == true)
                 {
+                    int j = opt.Length -2;
+                    sql_sum += " and (";
+                    System.Console.WriteLine(opt.Length);
+                    System.Console.WriteLine(j);
+                    for (int i = 1; i<opt.Length; i++)
+                    {
+                        sql_sum += " orientation LIKE '%"+opt[i]+"%' ";
+                        if (j > 0)
+                        {
+                            sql_sum += "or";
+                            j--;
+                        }
+
+                    }
+                    sql_sum += ")";
+                }
+                if(fe_flag == 1 || m_flag == 1)
+                {
+                    sql_sum += " and (";
+                    if (fe_flag != 0 && m_flag != 1)
+                    {
+                        sql_sum += "gender = 'Female'";
+                    }
+                    if (m_flag != 0 && fe_flag != 1)
+                    {
+                        sql_sum += "gender = 'Male'";
+                    }
+                    if (m_flag != 0 && fe_flag != 0)
+                    {
+                        sql_sum += "gender = 'Male' or gender = 'Female'";
+                    }
+                    sql_sum += " )";
 
                 }
+                
                 if ((y_int+i_int+b_int)!=0)
                 {
                     sql_sum += " and (";
@@ -368,6 +405,8 @@ namespace ppanam
             {
                 fe_flag = 0;
             }
+
+
         }
     }
 }

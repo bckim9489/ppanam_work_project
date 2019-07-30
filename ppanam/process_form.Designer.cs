@@ -172,6 +172,7 @@
             this.amba_pro_list.UseCompatibleStateImageBehavior = false;
             this.amba_pro_list.View = System.Windows.Forms.View.Details;
             this.amba_pro_list.SelectedIndexChanged += new System.EventHandler(this.Amba_pro_list_SelectedIndexChanged);
+            this.amba_pro_list.Click += new System.EventHandler(this.Amba_pro_list_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
