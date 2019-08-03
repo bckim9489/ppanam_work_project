@@ -55,6 +55,7 @@ namespace ppanam
                 if (form.GetType() == typeof(status_form))
                 {
                     form.Activate();
+                    //form.Close();
                     form.BringToFront();
                     return;
                 }

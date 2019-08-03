@@ -23,6 +23,7 @@ namespace ppanam
             tester_list.Items.Clear();
             te_pro_list.Items.Clear();
             project_list.Items.Clear();
+
             string sql_ = "SELECT * FROM project_tbl WHERE Tester = 1 and progress >= 40";
             string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
@@ -63,6 +64,7 @@ namespace ppanam
 
 
             conn.Open();
+            richTextBox1.Clear();
             sql_ = "SELECT explane FROM menual_tbl WHERE pid = 1";
             cmd.CommandText = sql_;
             rdr = cmd.ExecuteReader();
@@ -198,7 +200,7 @@ namespace ppanam
                 MySqlCommand cmd = new MySqlCommand();
                 conn.Open();
                 cmd.Connection = conn;
-                string sql_ = "SELECT name FROM tester_tbl WHERE pid = " + te_pro_list.SelectedItems[0].Text;
+                string sql_ = "SELECT name FROM tester_tbl WHERE selected = 'No' and pid = " + te_pro_list.SelectedItems[0].Text;
                 cmd.CommandText = sql_;
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -221,7 +223,7 @@ namespace ppanam
                 MySqlCommand cmd = new MySqlCommand();
                 conn.Open();
                 cmd.Connection = conn;
-                string sql_ = "SELECT name FROM tester_tbl WHERE selected = 1 and pid = " + te_pro_list.SelectedItems[0].Text;
+                string sql_ = "SELECT name FROM tester_tbl WHERE selected = 'Yes' and pid = " + te_pro_list.SelectedItems[0].Text;
                 cmd.CommandText = sql_;
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -274,7 +276,7 @@ namespace ppanam
                 MySqlCommand cmd = new MySqlCommand();
                 conn.Open();
                 cmd.Connection = conn;
-                string sql_ = "SELECT * FROM tester_tbl WHERE pid = " + te_pro_list.SelectedItems[0].Text;
+                string sql_ = "SELECT * FROM tester_tbl WHERE name = '"+tester_list.SelectedItems[0].Text+"' and pid = " + te_pro_list.SelectedItems[0].SubItems[0].Text;
                 cmd.CommandText = sql_;
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())

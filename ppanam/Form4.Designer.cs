@@ -56,10 +56,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 29);
+            this.tabControl1.Location = new System.Drawing.Point(14, 36);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(834, 438);
+            this.tabControl1.Size = new System.Drawing.Size(953, 548);
             this.tabControl1.TabIndex = 13;
             // 
             // tabPage1
@@ -70,19 +71,21 @@
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.project_list);
             this.tabPage1.Controls.Add(this.richTextBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(826, 412);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Size = new System.Drawing.Size(945, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "influencer Upload";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(594, 355);
+            this.button1.Location = new System.Drawing.Point(679, 444);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 39);
+            this.button1.Size = new System.Drawing.Size(121, 49);
             this.button1.TabIndex = 13;
             this.button1.Text = "Modify";
             this.button1.UseVisualStyleBackColor = true;
@@ -90,9 +93,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(713, 355);
+            this.button4.Location = new System.Drawing.Point(815, 444);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 39);
+            this.button4.Size = new System.Drawing.Size(122, 49);
             this.button4.TabIndex = 17;
             this.button4.Text = "Apply";
             this.button4.UseVisualStyleBackColor = true;
@@ -100,9 +104,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(5, 359);
+            this.button3.Location = new System.Drawing.Point(6, 449);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 33);
+            this.button3.Size = new System.Drawing.Size(105, 41);
             this.button3.TabIndex = 16;
             this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = true;
@@ -110,9 +115,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(147, 359);
+            this.button2.Location = new System.Drawing.Point(168, 449);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 33);
+            this.button2.Size = new System.Drawing.Size(120, 41);
             this.button2.TabIndex = 15;
             this.button2.Text = "Done";
             this.button2.UseVisualStyleBackColor = true;
@@ -125,9 +131,10 @@
             this.columnHeader2});
             this.project_list.FullRowSelect = true;
             this.project_list.GridLines = true;
-            this.project_list.Location = new System.Drawing.Point(4, 17);
+            this.project_list.Location = new System.Drawing.Point(5, 21);
+            this.project_list.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.project_list.Name = "project_list";
-            this.project_list.Size = new System.Drawing.Size(247, 333);
+            this.project_list.Size = new System.Drawing.Size(282, 415);
             this.project_list.TabIndex = 14;
             this.project_list.UseCompatibleStateImageBehavior = false;
             this.project_list.View = System.Windows.Forms.View.Details;
@@ -143,9 +150,10 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(305, 17);
+            this.richTextBox1.Location = new System.Drawing.Point(349, 21);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(515, 333);
+            this.richTextBox1.Size = new System.Drawing.Size(588, 415);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
             // 
@@ -157,19 +165,21 @@
             this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Controls.Add(this.listView1);
             this.tabPage2.Controls.Add(this.richTextBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(826, 412);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Size = new System.Drawing.Size(945, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tester Review";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(595, 356);
+            this.button5.Location = new System.Drawing.Point(680, 445);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 39);
+            this.button5.Size = new System.Drawing.Size(121, 49);
             this.button5.TabIndex = 19;
             this.button5.Text = "Modify";
             this.button5.UseVisualStyleBackColor = true;
@@ -177,9 +187,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(714, 356);
+            this.button6.Location = new System.Drawing.Point(816, 445);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(107, 39);
+            this.button6.Size = new System.Drawing.Size(122, 49);
             this.button6.TabIndex = 23;
             this.button6.Text = "Apply";
             this.button6.UseVisualStyleBackColor = true;
@@ -187,9 +198,10 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(6, 360);
+            this.button7.Location = new System.Drawing.Point(7, 450);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(92, 33);
+            this.button7.Size = new System.Drawing.Size(105, 41);
             this.button7.TabIndex = 22;
             this.button7.Text = "Cancel";
             this.button7.UseVisualStyleBackColor = true;
@@ -197,9 +209,10 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(148, 360);
+            this.button8.Location = new System.Drawing.Point(169, 450);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(105, 33);
+            this.button8.Size = new System.Drawing.Size(120, 41);
             this.button8.TabIndex = 21;
             this.button8.Text = "Done";
             this.button8.UseVisualStyleBackColor = true;
@@ -212,9 +225,10 @@
             this.columnHeader4});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(5, 18);
+            this.listView1.Location = new System.Drawing.Point(6, 22);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(247, 333);
+            this.listView1.Size = new System.Drawing.Size(282, 415);
             this.listView1.TabIndex = 20;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -230,21 +244,24 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(306, 18);
+            this.richTextBox2.Location = new System.Drawing.Point(350, 22);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(515, 333);
+            this.richTextBox2.Size = new System.Drawing.Size(588, 415);
             this.richTextBox2.TabIndex = 18;
             this.richTextBox2.Text = "";
             // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 496);
+            this.ClientSize = new System.Drawing.Size(981, 620);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form4";
             this.Text = "Form4";
+            this.Activated += new System.EventHandler(this.Delivery_form_Load);
             this.Load += new System.EventHandler(this.Delivery_form_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

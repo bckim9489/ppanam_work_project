@@ -20,6 +20,9 @@ namespace ppanam
 
         private void Delivery_form_Load(object sender, EventArgs e)
         {
+            project_list.Items.Clear();
+            listView1.Items.Clear();
+
             string sql_ = "SELECT * FROM project_tbl WHERE Ambassador = 1 and progress >= 30";
             string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
@@ -37,6 +40,17 @@ namespace ppanam
 
                 project_list.Items.Add(lvt);
             }
+
+            conn.Close();
+
+
+            conn.Open();
+            sql_ = "SELECT explane FROM menual_tbl where pid = 3";
+            cmd.CommandText = sql_;
+
+            string txt = cmd.ExecuteScalar().ToString();
+            richTextBox1.Text = txt;
+
             richTextBox1.ReadOnly = true;
             button1.Visible = true;
             button4.Visible = false;
@@ -54,6 +68,15 @@ namespace ppanam
 
                 listView1.Items.Add(lvt);
             }
+            conn.Close();
+
+
+            conn.Open();
+            sql_ = "SELECT explane FROM menual_tbl where pid = 5";
+            cmd.CommandText = sql_;
+
+            txt = cmd.ExecuteScalar().ToString();
+            richTextBox2.Text = txt;
             richTextBox2.ReadOnly = true;
             button5.Visible = true;
             button6.Visible = false;

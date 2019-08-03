@@ -121,6 +121,7 @@ namespace ppanam
 
         private void show_list()
         {
+            project_list.Items.Clear();
             string sql_ = "SELECT product_name, pid, company_name FROM project_tbl";
 
             string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
@@ -143,6 +144,7 @@ namespace ppanam
 
         private void Update_form_Load(object sender, EventArgs e)
         {
+            
             project_list.Columns.Add("PID", 40);
             project_list.Columns.Add("Product",140);
             project_list.Columns.Add("Company", 160);

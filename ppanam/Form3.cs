@@ -36,7 +36,7 @@ namespace ppanam
                    "', '" + textBox2.Text +
                    "', '" + textBox3.Text +
                    "', '" + textBox4.Text +
-                   "', '', 0)";
+                   "', '', 'No')";
             MySqlCommand cmd2 = new MySqlCommand(sql, conn);
             cmd2.ExecuteNonQuery();
 

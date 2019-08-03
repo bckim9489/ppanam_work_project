@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ppanam.exe" size="472528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ppanam.exe" size="475088">
       <assemblyIdentity name="ppanam" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yndzEu0TG1CtycBHL0kjYWq3eS37qF1/1cu5RbNAuL4=</dsig:DigestValue>
+        <dsig:DigestValue>9MrwPZqyqmZXdW7aXR9Tp4yk5zJCukz/F9HTJmlvNfM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
