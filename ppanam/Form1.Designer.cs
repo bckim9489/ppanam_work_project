@@ -35,12 +35,12 @@
             this.projectLoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teskUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deliveryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mediaUploadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.appToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ppanamDataSet1 = new ppanam.ppanamDataSet();
-            this.deliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ppanamDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -50,8 +50,7 @@
             this.mainToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.processWriteToolStripMenuItem,
             this.projectLoadToolStripMenuItem,
-            this.modelToolStripMenuItem,
-            this.deliveryToolStripMenuItem});
+            this.modelToolStripMenuItem});
             this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
             this.mainToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.mainToolStripMenuItem.Text = "Main";
@@ -75,7 +74,10 @@
             // 
             this.projectLoadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusToolStripMenuItem,
-            this.teskUpToolStripMenuItem});
+            this.teskUpToolStripMenuItem,
+            this.testerToolStripMenuItem1,
+            this.deliveryToolStripMenuItem1,
+            this.mediaUploadToolStripMenuItem});
             this.projectLoadToolStripMenuItem.Name = "projectLoadToolStripMenuItem";
             this.projectLoadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.projectLoadToolStripMenuItem.Text = "Process";
@@ -91,8 +93,29 @@
             // 
             this.teskUpToolStripMenuItem.Name = "teskUpToolStripMenuItem";
             this.teskUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.teskUpToolStripMenuItem.Text = "Update";
+            this.teskUpToolStripMenuItem.Text = "Influencer";
             this.teskUpToolStripMenuItem.Click += new System.EventHandler(this.TeskUpToolStripMenuItem_Click);
+            // 
+            // testerToolStripMenuItem1
+            // 
+            this.testerToolStripMenuItem1.Name = "testerToolStripMenuItem1";
+            this.testerToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.testerToolStripMenuItem1.Text = "Tester";
+            this.testerToolStripMenuItem1.Click += new System.EventHandler(this.TesterToolStripMenuItem1_Click);
+            // 
+            // deliveryToolStripMenuItem1
+            // 
+            this.deliveryToolStripMenuItem1.Name = "deliveryToolStripMenuItem1";
+            this.deliveryToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.deliveryToolStripMenuItem1.Text = "Delivery";
+            this.deliveryToolStripMenuItem1.Click += new System.EventHandler(this.DeliveryToolStripMenuItem1_Click);
+            // 
+            // mediaUploadToolStripMenuItem
+            // 
+            this.mediaUploadToolStripMenuItem.Name = "mediaUploadToolStripMenuItem";
+            this.mediaUploadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mediaUploadToolStripMenuItem.Text = "Media Upload";
+            this.mediaUploadToolStripMenuItem.Click += new System.EventHandler(this.MediaUploadToolStripMenuItem_Click);
             // 
             // modelToolStripMenuItem
             // 
@@ -101,20 +124,11 @@
             this.modelToolStripMenuItem.Text = "Model";
             this.modelToolStripMenuItem.Click += new System.EventHandler(this.ModelToolStripMenuItem_Click);
             // 
-            // appToolStripMenuItem
-            // 
-            this.appToolStripMenuItem.Name = "appToolStripMenuItem";
-            this.appToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.appToolStripMenuItem.Text = "Schedule";
-            this.appToolStripMenuItem.Click += new System.EventHandler(this.AppToolStripMenuItem_Click);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mainToolStripMenuItem,
-            this.appToolStripMenuItem,
-            this.configToolStripMenuItem});
+            this.mainToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -122,22 +136,10 @@
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // configToolStripMenuItem
-            // 
-            this.configToolStripMenuItem.Name = "configToolStripMenuItem";
-            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.configToolStripMenuItem.Text = "Config";
-            // 
             // ppanamDataSet1
             // 
             this.ppanamDataSet1.DataSetName = "ppanamDataSet";
             this.ppanamDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // deliveryToolStripMenuItem
-            // 
-            this.deliveryToolStripMenuItem.Name = "deliveryToolStripMenuItem";
-            this.deliveryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deliveryToolStripMenuItem.Text = "Delivery";
             // 
             // Form1
             // 
@@ -170,14 +172,14 @@
         private System.Windows.Forms.ToolStripMenuItem processWriteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem projectLoadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem appToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem configToolStripMenuItem;
         private ppanamDataSet ppanamDataSet1;
         private System.Windows.Forms.ToolStripMenuItem statusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem teskUpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deliveryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deliveryToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem mediaUploadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testerToolStripMenuItem1;
     }
 }
 

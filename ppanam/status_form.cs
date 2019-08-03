@@ -123,7 +123,7 @@ namespace ppanam
         {
             string sql_ = "SELECT product_name, pid, company_name FROM project_tbl";
 
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
@@ -161,7 +161,7 @@ namespace ppanam
                 string p_name = project_list.SelectedItems[0].SubItems[1].Text;
 
                 string sql_ = "SELECT progress FROM project_tbl WHERE product_name = '" + p_name + "' and pid =" + pid;
-                string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+                string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
                 MySqlConnection conn = new MySqlConnection(strConn);
                 conn.Open();
 

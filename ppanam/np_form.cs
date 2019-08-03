@@ -43,7 +43,7 @@ namespace ppanam
             //client req
             string req_ = req_box.Text;
 
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
 

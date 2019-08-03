@@ -24,7 +24,7 @@ namespace ppanam
             
             string sql_ = "SELECT person_id, p_name FROM influencer_tbl";
             influ_list.Items.Clear();
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
@@ -79,7 +79,7 @@ namespace ppanam
                 string p_name = influ_list.SelectedItems[0].SubItems[1].Text;
                 pictureBox1.Image = null;
                 string sql_ = "SELECT * FROM influencer_tbl WHERE p_name = '" + p_name + "' and person_id =" + person_id;
-                string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+                string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
                 MySqlConnection conn = new MySqlConnection(strConn);
                 conn.Open();
 
@@ -182,7 +182,7 @@ namespace ppanam
         }
         private void img_load(string person_id)
         {
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
 
@@ -226,7 +226,7 @@ namespace ppanam
         private void img_upload(string person_id)
         {
             string qury = "";
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             
@@ -293,7 +293,7 @@ namespace ppanam
             string gend = g_box.Text;
             img_upload(person_id);
 
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
@@ -327,7 +327,7 @@ namespace ppanam
         {
             //Modify_Mode();
 
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
@@ -353,7 +353,7 @@ namespace ppanam
         private void Del_btn_Click(object sender, EventArgs e)
         {
             string pers_id = person_id_lb.Text;
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             

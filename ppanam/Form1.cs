@@ -99,5 +99,59 @@ namespace ppanam
             proc_.Dock = DockStyle.Fill;
             proc_.Show();
         }
+
+        private void TesterToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)//창 열려 있는지 확인쓰
+            {
+                if (form.GetType() == typeof(Form2))
+                {
+                    form.Activate();
+                    form.BringToFront();
+                    return;
+                }
+            }
+
+            Form2 proc_ = new Form2();
+            proc_.MdiParent = this;
+            proc_.Dock = DockStyle.Fill;
+            proc_.Show();
+        }
+
+        private void DeliveryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)//창 열려 있는지 확인쓰
+            {
+                if (form.GetType() == typeof(delivery_form))
+                {
+                    form.Activate();
+                    form.BringToFront();
+                    return;
+                }
+            }
+
+            delivery_form proc_ = new delivery_form();
+            proc_.MdiParent = this;
+            proc_.Dock = DockStyle.Fill;
+            proc_.Show();
+        }
+
+        private void MediaUploadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)//창 열려 있는지 확인쓰
+            {
+                if (form.GetType() == typeof(Form4))
+                {
+                    form.Activate();
+                    form.BringToFront();
+                    return;
+                }
+            }
+
+            Form4 proc_ = new Form4();
+            proc_.MdiParent = this;
+            proc_.Dock = DockStyle.Fill;
+            proc_.Show();
+        }
     }
 }

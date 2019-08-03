@@ -33,7 +33,7 @@ namespace ppanam
             amba_list.Items.Clear();
             string sql_ = "SELECT person_id, p_name, type FROM influencer_tbl WHERE blacklist = 0";
 
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
@@ -67,9 +67,9 @@ namespace ppanam
         private void project_init_list()
         {
             amba_pro_list.Items.Clear();
-            string sql_ = "SELECT * FROM project_tbl";
+            string sql_ = "SELECT * FROM project_tbl WHERE Ambassador = 1";
 
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
@@ -100,7 +100,6 @@ namespace ppanam
                 if (Convert.ToInt32(rdr["Instagram"]) == 1)
                 {
                     insta = "Yes";
-                    
                 }
                 else
                 {
@@ -117,39 +116,13 @@ namespace ppanam
                     blog = "No";
                     
                 }
-                /*
-                if (rdr["Tester"].ToString().Equals("1"))
-                {
-                    ty_flag += "1";
-                }
-                else
-                {
-                    ty_flag += "0";
-                }
-                if (rdr["Ambassador"].ToString().Equals("1"))
-                {
-                    ty_flag += "1";
-                }
-                else
-                {
-                    ty_flag += "0";
-                }
-                if (rdr["Influencer"].ToString().Equals("1"))
-                {
-                    ty_flag += "1";
-                }
-                else
-                {
-                    ty_flag += "0";
-                }
-                */
+                
                 lvt.SubItems.Add(youtube);
                 lvt.SubItems.Add(insta);
                 lvt.SubItems.Add(blog);
                 lvt.SubItems.Add(rdr["requirement"].ToString());
                 lvt.SubItems.Add(ty_flag);
                 amba_pro_list.Items.Add(lvt);
-                
             }
             conn.Close();
         }
@@ -198,6 +171,7 @@ namespace ppanam
                     }
                     sql_sum += ")";
                 }
+
                 if(fe_flag == 1 || m_flag == 1)
                 {
                     sql_sum += " and (";
@@ -214,7 +188,6 @@ namespace ppanam
                         sql_sum += "gender = 'Male' or gender = 'Female'";
                     }
                     sql_sum += " )";
-
                 }
                 
                 if ((y_int+i_int+b_int)!=0)
@@ -251,7 +224,7 @@ namespace ppanam
                     "WHERE blacklist = 0 and status NOT LIKE '%Not%' and type = 'Ambassador'" +
                     "and project_id = 0"+sql_sum;
 
-                string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+                string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
                 MySqlConnection conn = new MySqlConnection(strConn);
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
@@ -311,7 +284,6 @@ namespace ppanam
                 selected_list.Items.Remove(lvt);
                 amba_list.Items.Add(lvt);
             }
-            
         }
 
         private void Reset_btn_Click(object sender, EventArgs e)
@@ -332,7 +304,7 @@ namespace ppanam
                     string person_id = selected_list.Items[i].SubItems[0].Text;
                     string pid = amba_pro_list.SelectedItems[0].SubItems[0].Text;
                     string sql_ = "UPDATE influencer_tbl SET project_id = " + pid + " WHERE person_id = " + person_id;
-                    string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+                    string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
                     MySqlConnection conn = new MySqlConnection(strConn);
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand();
@@ -340,8 +312,35 @@ namespace ppanam
                     cmd.CommandText = sql_;
                     result = cmd.ExecuteNonQuery();
                     conn.Close();
+                    conn.Open();
+                    sql_ = "SELECT progress FROM project_tbl WHERE pid ="+pid;
+                    cmd.CommandText = sql_;
+                    object res = cmd.ExecuteScalar();
+                    int pg = (int)res;
+                    if(pg < 20)
+                    {
+                        pg = 20;
+                        sql_ = "UPDATE project_tbl SET progress =" + pg + " WHERE pid ="  + pid;
+                        cmd.CommandText = sql_;
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
                 }
             }
+            else
+            {
+                string pid = amba_pro_list.SelectedItems[0].SubItems[0].Text;
+                string sql_ = "UPDATE project_tbl SET progress = 10 WHERE pid =" + pid;
+                string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+                MySqlConnection conn = new MySqlConnection(strConn);
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sql_;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            
             cnt = amba_list.Items.Count;
             if(cnt > 0)
             {
@@ -350,7 +349,7 @@ namespace ppanam
                     string person_id = amba_list.Items[i].SubItems[0].Text;
                     string pid = "0";
                     string sql_ = "UPDATE influencer_tbl SET project_id = " + pid + " WHERE person_id = " + person_id;
-                    string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+                    string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
                     MySqlConnection conn = new MySqlConnection(strConn);
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand();
@@ -360,10 +359,9 @@ namespace ppanam
                     conn.Close();
                 }
             }
-            
             if (result != -1 && result2 != -1)
             {
-                MessageBox.Show("Success!");
+                MessageBox.Show("Applied!");
             }
             else
             {
@@ -405,8 +403,10 @@ namespace ppanam
             {
                 fe_flag = 0;
             }
-
-
         }
+
+        //--------------------------Tab 2-----------------------------------
+
+        
     }
 }

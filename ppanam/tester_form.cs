@@ -52,9 +52,9 @@ namespace ppanam
         public void Start_Connect_DB() //FIXME : require DB_connect function -> classful
         {
             string sql_ = "SELECT company_name, product_name FROM project_tbl";
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             //string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
-            //External IP 175.204.17.171, Internal IP 192.168.0.23;
+            //External IP 175.204.17.171, Internal IP 175.204.17.171;
             MySqlConnection conn = new MySqlConnection(strConn);
 
             conn.Open();
@@ -75,8 +75,6 @@ namespace ppanam
         {
 
         }
-
-        
 
         private void Write_btn_Click(object sender, EventArgs e)
         {
@@ -103,7 +101,7 @@ namespace ppanam
 
             string sql_ = "SELECT pid FROM project_tbl WHERE product_name ='"+old_pd_name+"' and company_name = '"+old_cp_name+"'";
 
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
@@ -151,7 +149,7 @@ namespace ppanam
             string target_cp_name = ck_dg.Cells[0].Value.ToString();
             string sql_ = "SELECT * FROM project_tbl WHERE product_name ='" + target_pd_name + "' and company_name = '" + target_cp_name + "'";
 
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
@@ -185,7 +183,7 @@ namespace ppanam
             string target_cp_name = ck_dg.Cells[0].Value.ToString();
             string sql_ = "DELETE FROM project_tbl where  product_name ='" + target_pd_name + "' and company_name = '" + target_cp_name + "'";
 
-            string strConn = "Server=192.168.0.23; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
+            string strConn = "Server=175.204.17.171; Database=ppanam;UID=root;PASSWORD=1q2w3e4r;";
             MySqlConnection conn = new MySqlConnection(strConn);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();

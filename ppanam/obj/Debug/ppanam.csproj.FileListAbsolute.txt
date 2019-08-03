@@ -18,3 +18,11 @@ C:\Users\BC\source\repos\ppanam\ppanam\bin\Debug\MySql.Data.xml
 C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.csproj.CopyComplete
 C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.np_form.resources
 C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.status_form.resources
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.Form2.resources
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.Form3.resources
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.delivery_form.resources
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.Form4.resources
+C:\Users\BC\source\repos\ppanam\ppanam\bin\Debug\ppanam.exe.manifest
+C:\Users\BC\source\repos\ppanam\ppanam\bin\Debug\ppanam.application
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.exe.manifest
+C:\Users\BC\source\repos\ppanam\ppanam\obj\Debug\ppanam.application
